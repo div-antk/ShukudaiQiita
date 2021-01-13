@@ -40,6 +40,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       return 120
   }
   
-  
+  func getArticles(keyword:String) {
+    
+    // APIキー
+    
+    let url = "https://qiita.com/api/v2/items"
+  }
 }
 
