@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var searchTextField: UITextField!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return 120
   }
+  
   
 }
 
