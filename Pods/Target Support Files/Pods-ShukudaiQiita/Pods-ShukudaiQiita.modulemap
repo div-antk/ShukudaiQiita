@@ -1,0 +1,6 @@
+framework module Pods_ShukudaiQiita {
+  umbrella header "Pods-ShukudaiQiita-umbrella.h"
+
+  export *
+  module * { export * }
+}
