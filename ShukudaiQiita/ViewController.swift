@@ -47,15 +47,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // APIキー
     
 //    let url = "https://qiita.com/api/v2/items?query=\(keyword)"
-    let url = "https://qiita.com/api/v2/items"
-    
+    let url = "https://qiita.com/api/v2/items?query=tag:Swift"
     
     // Alamofireを使ってHTTPリクエストを投げる
-    AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (responce) in
-                switch responce.result{
+    AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default)
+      .responseJSON { response in
+                switch response.result{
                 case .success:
-                  let json:JSON = JSON(responce.data as Any)
-                  print(json);
+                  let json:JSON = JSON(response.data as Any)
+                  json.forEach { (_, json) in
+                    print(json["title"])
+
+                  }
 //                  let titleString = json["hits"][self.count]
                   
                 // 失敗時
