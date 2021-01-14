@@ -14,12 +14,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchTextField: UITextField!
   
+  let count = 0;
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.delegate = self
     tableView.dataSource = self
-    
+    getArticles()
   }
   
   // セルの数
@@ -40,11 +42,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       return 120
   }
   
-  func getArticles(keyword:String) {
-    
+//  func getArticles(keyword:String) {
+    func getArticles() {
     // APIキー
     
+//    let url = "https://qiita.com/api/v2/items?query=\(keyword)"
     let url = "https://qiita.com/api/v2/items"
+    
+    
+    // Alamofireを使ってHTTPリクエストを投げる
+    AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (responce) in
+                switch responce.result{
+                case .success:
+                  let json:JSON = JSON(responce.data as Any)
+                  print(json);
+//                  let titleString = json["hits"][self.count]
+                  
+                // 失敗時
+                case .failure(let error):
+                  print(error)
+                }
+               }
+    
+    // 返ってきた値をJSON解析を行う
   }
 }
 
