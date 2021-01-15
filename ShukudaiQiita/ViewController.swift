@@ -7,7 +7,8 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
+//import SwiftyJSON
+//import Foundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -15,6 +16,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @IBOutlet weak var searchTextField: UITextField!
   
   let count = 0;
+  
+  private var articles:ArticleModel?
+  
+  // 記事を入れる配列
+//  var articles = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,29 +49,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   }
   
 //  func getArticles(keyword:String) {
-    func getArticles() {
+  func getArticles() {
     // APIキー
     
-//    let url = "https://qiita.com/api/v2/items?query=\(keyword)"
+//    let url = "https://qiita.com/api/v2/items?query=\(keyword)+title:やってみる"
     let url = "https://qiita.com/api/v2/items?query=tag:Swift"
     
     // Alamofireを使ってHTTPリクエストを投げる
-    AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default)
+    AF.request(url,
+               method: .get,
+               parameters: nil,
+               encoding: JSONEncoding.default,
+               headers: nil)
       .responseJSON { response in
-                switch response.result{
-                case .success:
-                  let json:JSON = JSON(response.data as Any)
-                  json.forEach { (_, json) in
-                    print(json["title"])
-
-                  }
-//                  let titleString = json["hits"][self.count]
-                  
-                // 失敗時
-                case .failure(let error):
-                  print(error)
-                }
-               }
+        let articles: JSONDecoder = JSONDecoder().decode(ArticleModel.self, from: data)
+          print(self.articles!)
+        } catch {
+          print("Error")
+        }
+      }
+//                switch response.result{
+//                case .success
+//
+//                  let json:JSON = JSON(response.data as Any)
+//                  json.forEach { (_, json) in
+//                    print(json["title"])
+//                    let article = json["title"]
+//                  }
+//                  self.articles.append(article)
+////                  let titleString = json["hits"][self.count]
+//
+//                // 失敗時
+//                case .failure(let error):
+//                  print(error)
+//                }
+//               }
     
     // 返ってきた値をJSON解析を行う
   }
