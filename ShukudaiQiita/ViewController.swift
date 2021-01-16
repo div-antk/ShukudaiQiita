@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   private var articles:ArticleModel?
   
   // 記事を入れる配列
-//  var articles = [String]()
+  //  var articles = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,14 +45,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   // セルの高さ
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 120
+    return 120
   }
   
-//  func getArticles(keyword:String) {
+  //  func getArticles(keyword:String) {
   func getArticles() {
     // APIキー
     
-//    let url = "https://qiita.com/api/v2/items?query=\(keyword)+title:やってみる"
+    //    let url = "https://qiita.com/api/v2/items?query=\(keyword)+title:やってみる"
     let url = "https://qiita.com/api/v2/items?query=tag:Swift"
     
     // Alamofireを使ってHTTPリクエストを投げる
@@ -61,31 +61,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                parameters: nil,
                encoding: JSONEncoding.default,
                headers: nil)
-      .responseJSON { response in
-        let articles: JSONDecoder = JSONDecoder().decode(ArticleModel.self, from: data)
-          print(self.articles!)
+      .responseJSON{ (response) in
+        let decoder: JSONDecoder = JSONDecoder()
+        do {
+          let articles: [ArticleModel] = try decoder.decode([ArticleModel].self, from: response.data!)
+          print(articles)
         } catch {
-          print("Error")
+          print("error")
         }
       }
-//                switch response.result{
-//                case .success
-//
-//                  let json:JSON = JSON(response.data as Any)
-//                  json.forEach { (_, json) in
-//                    print(json["title"])
-//                    let article = json["title"]
-//                  }
-//                  self.articles.append(article)
-////                  let titleString = json["hits"][self.count]
-//
-//                // 失敗時
-//                case .failure(let error):
-//                  print(error)
-//                }
-//               }
-    
-    // 返ってきた値をJSON解析を行う
   }
 }
 
