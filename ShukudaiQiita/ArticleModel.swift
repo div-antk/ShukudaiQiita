@@ -9,4 +9,5 @@ import Foundation
 
 struct ArticleModel: Codable {
   let title: String
+  let created_at: String
 }

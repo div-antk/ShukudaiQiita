@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 //import SwiftyJSON
-//import Foundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -16,11 +15,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @IBOutlet weak var searchTextField: UITextField!
   
   let count = 0;
-  
-  private var articles:ArticleModel?
-  
+    
   // 記事を入れる配列
-  //  var articles = [String]()
+  var articles = [ArticleModel]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,17 +25,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     tableView.delegate = self
     tableView.dataSource = self
     getArticles()
+//    print(self.articles)
   }
   
   // セルの数
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return articles.count
   }
+  
+//
+//  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//      guard let cell = tableView.dequeueReusableCell(withIdentifier: "QiitaTableViewCell", for: indexPath) as? QiitaTableViewCell else {
+//          return UITableViewCell()
+//      }
   
   // セルの構築
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let article = articles[indexPath.row]
+    cell.set(title: article.title)
     
     return cell
   }
@@ -51,7 +57,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   //  func getArticles(keyword:String) {
   func getArticles() {
     // APIキー
-    
     //    let url = "https://qiita.com/api/v2/items?query=\(keyword)+title:やってみる"
     let url = "https://qiita.com/api/v2/items?query=tag:Swift"
     
@@ -65,7 +70,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let decoder: JSONDecoder = JSONDecoder()
         do {
           let articles: [ArticleModel] = try decoder.decode([ArticleModel].self, from: response.data!)
-          print(articles)
+          self.articles = articles
+          self.tableView.reloadData()
+          print(self.articles.count)
         } catch {
           print("error")
         }
