@@ -49,8 +49,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     let article = articles[indexPath.row]
-//    cell.set(title: article.title)
-    cell.textLabel?.text = article.title
+    
+    
+    let title = cell.viewWithTag(1) as! UILabel
+    title.text = article.title
+        
+    let created = cell.viewWithTag(2) as! UILabel
+    created.text = article.created_at
     
     return cell
   }
