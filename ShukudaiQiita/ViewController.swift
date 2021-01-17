@@ -24,12 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     tableView.delegate = self
     tableView.dataSource = self
-//    print(self.articles)
-//    let nib = UINib(nibName: "Cell", bundle: nil)
-//    tableView.register(nib, forCellReuseIdentifier: "Cell")
-//    tableView.rowHeight = 80
-    
-    getArticles()
+        
+    getArticles(keyword: "")
 
   }
   
@@ -50,10 +46,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     let article = articles[indexPath.row]
     
-    
+    // タイトルをセルに反映
     let title = cell.viewWithTag(1) as! UILabel
     title.text = article.title
         
+    // 作成日時をセルに反映
     let created = cell.viewWithTag(2) as! UILabel
     created.text = article.created_at
     
@@ -65,13 +62,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return 120
   }
   
-  //  func getArticles(keyword:String) {
-  func getArticles() {
-    // APIキー
-    let keywordString = "swiftUI"
-    let keywordEncodeString = keywordString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+  // 虫めがねボタン押したとき
+  @IBAction func searchAction(_ sender: Any) {
     
-    let url = "https://qiita.com/api/v2/items?query=\(keywordEncodeString!)+tag:Swift"
+    getArticles(keyword: searchTextField.text!)
+  }
+  
+  func getArticles(keyword:String) {
+    
+    // 受け取った検索キーワードが日本語の場合はエラーになるのでパーセントエンコーディングする
+    let keywordEncode = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    
+    // keywordとSwiftタグに限定してAPIを叩く
+    let url = "https://qiita.com/api/v2/items?query=\(keywordEncode!)+tag:Swift"
     
     // Alamofireを使ってHTTPリクエストを投げる
     AF.request(url,
