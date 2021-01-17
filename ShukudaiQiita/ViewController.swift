@@ -68,8 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   //  func getArticles(keyword:String) {
   func getArticles() {
     // APIキー
+    let keyword = "やってみた"
     //    let url = "https://qiita.com/api/v2/items?query=\(keyword)+title:やってみる"
-    let url = "https://qiita.com/api/v2/items?query=tag:Swift"
+    let url = "https://qiita.com/api/v2/items?query=\(keyword)+tag:Swift"
     
     // Alamofireを使ってHTTPリクエストを投げる
     AF.request(url,
