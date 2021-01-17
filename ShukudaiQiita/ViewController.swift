@@ -24,8 +24,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     tableView.delegate = self
     tableView.dataSource = self
-    getArticles()
 //    print(self.articles)
+//    let nib = UINib(nibName: "Cell", bundle: nil)
+//    tableView.register(nib, forCellReuseIdentifier: "Cell")
+//    tableView.rowHeight = 80
+    
+    getArticles()
+
   }
   
   // セルの数
@@ -44,7 +49,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     let article = articles[indexPath.row]
-    cell.set(title: article.title)
+//    cell.set(title: article.title)
+    cell.textLabel?.text = article.title
     
     return cell
   }
