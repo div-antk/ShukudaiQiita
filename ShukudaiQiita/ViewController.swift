@@ -53,6 +53,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 作成日時をセルに反映
     let created = cell.viewWithTag(2) as! UILabel
     created.text = article.created_at
+        
+//    let qiitaUrl = NSURL(string: article.url)
+//
+//    if UIApplication.shared.canOpenURL(qiitaUrl! as URL) {
+//      print(qiitaUrl as Any)
+//    }
     
     return cell
   }
