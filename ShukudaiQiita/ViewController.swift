@@ -7,7 +7,7 @@
 
 import UIKit
 import Alamofire
-//import SwiftyJSON
+import SafariServices
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @IBOutlet weak var searchTextField: UITextField!
   
   let count = 0;
+  var qiitaUrl = ""
     
   // 記事を入れる配列
   var articles = [ArticleModel]()
@@ -53,14 +54,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 作成日時をセルに反映
     let created = cell.viewWithTag(2) as! UILabel
     created.text = article.created_at
-        
-//    let qiitaUrl = NSURL(string: article.url)
-//
-//    if UIApplication.shared.canOpenURL(qiitaUrl! as URL) {
-//      print(qiitaUrl as Any)
-//    }
+  
+    // メンバ変数にURLを代入
+    self.qiitaUrl = article.url
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    print(self.qiitaUrl)
+
   }
   
   // セルの高さ
