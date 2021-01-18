@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import SafariServices
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -15,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   @IBOutlet weak var searchTextField: UITextField!
   
   let count = 0;
-  var qiitaUrl = ""
     
   // 記事を入れる配列
   var articles = [ArticleModel]()
@@ -27,19 +25,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     tableView.dataSource = self
         
     getArticles(keyword: "")
-
   }
   
   // セルの数
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return articles.count
   }
-  
-//
-//  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//      guard let cell = tableView.dequeueReusableCell(withIdentifier: "QiitaTableViewCell", for: indexPath) as? QiitaTableViewCell else {
-//          return UITableViewCell()
-//      }
   
   // セルの構築
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,17 +46,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let created = cell.viewWithTag(2) as! UILabel
     created.text = article.created_at
   
-    // メンバ変数にURLを代入
-    self.qiitaUrl = article.url
-    
     return cell
   }
   
   // セルをクリックしたとき
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    print(self.qiitaUrl)
-
     // WebViewControllerにurlを渡す
     let webViewController = WebViewController()
     webViewController.modalTransitionStyle = .crossDissolve
