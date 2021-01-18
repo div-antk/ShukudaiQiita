@@ -61,10 +61,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return cell
   }
   
+  // セルをクリックしたとき
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     print(self.qiitaUrl)
 
+    // WebViewControllerにurlを渡す
+    let webViewController = WebViewController()
+    webViewController.modalTransitionStyle = .crossDissolve
+    let article = articles[indexPath.row]
+    UserDefaults.standard.set(article.url, forKey: "url")
+    present(webViewController, animated: true, completion: nil)
   }
   
   // セルの高さ
