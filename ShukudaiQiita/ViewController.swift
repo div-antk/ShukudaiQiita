@@ -89,12 +89,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                encoding: JSONEncoding.default,
                headers: nil)
       .responseJSON{ (response) in
+        
         let decoder: JSONDecoder = JSONDecoder()
         do {
           let articles: [ArticleModel] = try decoder.decode([ArticleModel].self, from: response.data!)
           self.articles = articles
           self.tableView.reloadData()
-          print(self.articles.count)
+          
         } catch {
           print("error")
         }
