@@ -6,7 +6,6 @@ target 'ShukudaiQiita' do
   use_frameworks!
 
   # Pods for ShukudaiQiita
-  pod 'SwiftyJSON'
   pod 'Alamofire'
 
 end

@@ -15,7 +15,8 @@ class WebViewController: UIViewController,WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 50)
+      // ページの高さ
+      webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 20)
       view.addSubview(webView)
       
       let urlString = UserDefaults.standard.object(forKey: "url")

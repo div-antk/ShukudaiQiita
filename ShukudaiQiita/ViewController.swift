@@ -56,7 +56,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let webViewController = WebViewController()
     webViewController.modalTransitionStyle = .crossDissolve
     let article = articles[indexPath.row]
+    
+    // 遷移先で使うためにUserDefaultsへURLを保存
     UserDefaults.standard.set(article.url, forKey: "url")
+    // webViewControllerへ遷移
     present(webViewController, animated: true, completion: nil)
   }
   
