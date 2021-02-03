@@ -7,5 +7,6 @@ target 'ShukudaiQiita' do
 
   # Pods for ShukudaiQiita
   pod 'Alamofire'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
