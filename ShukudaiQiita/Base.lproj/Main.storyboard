@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Top View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShukudaiQiita" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="ShukudaiQiita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,7 @@
                         <color key="backgroundColor" red="0.33333333333333331" green="0.77254901960784317" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="searchButton" destination="lJw-x0-I7l" id="Efz-aL-9w0"/>
                         <outlet property="searchTextField" destination="5vx-PG-gAT" id="3IE-3J-FLM"/>
                         <outlet property="tableView" destination="wnc-JI-Bju" id="wDZ-Lv-dtm"/>
                     </connections>
