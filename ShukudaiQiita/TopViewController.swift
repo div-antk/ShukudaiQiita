@@ -15,11 +15,9 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    
-    @IBOutlet weak var starButton: UITableView!
-    
+        
     private let disposeBag = DisposeBag()
-
+    
     let count = 0;
     
     // 記事を入れる配列
@@ -32,20 +30,18 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         
         getArticles(keyword: "")
+        tap()
     }
     
-    func buttonTapped() {
-        starButton.rx.tap
-            .subscribe(onNext: { (next) in
-                if self.like {
-                    self.starButton.image = UIImage(systemName: "star.fill")
-                } else {
-                    self.starButton.image = UIImage(systemName: "star")
-                }
-                print("next")
-            }, onError: { (error) in
-                print("error:\(error)")
-            }).disposed(by: disposeBag)
+    func tap() {
+        searchButton.rx.tap
+            .subscribe(onNext: {(next) in
+//                self.count += 1
+//                self.countLabel.text = String(self.count)
+                        print("あああああ")
+//                        self.set()
+                    })
+                .disposed(by: disposeBag)
     }
     
     // セルの数
@@ -90,14 +86,12 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     // 虫めがねボタン押したとき
-//    @IBAction func searchAction(_ sender: Any) {
+//        @IBAction func searchAction(_ sender: Any) {
 //
-//        getArticles(keyword: searchTextField.text!)
-//    }
+//            getArticles(keyword: searchTextField.text!)
+//        }
     
     func getArticles(keyword:String) {
-        
-        
         
         // 受け取った検索キーワードが日本語の場合はエラーになるのでパーセントエンコーディングする
         let keywordEncode = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

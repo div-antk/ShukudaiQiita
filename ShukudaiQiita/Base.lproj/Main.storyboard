@@ -24,7 +24,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vx-PG-gAT">
-                                <rect key="frame" x="29" y="71" width="357" height="34"/>
+                                <rect key="frame" x="29" y="71" width="311" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -56,18 +56,13 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aT-Wg-YPq">
-                                                    <rect key="frame" x="364" y="115" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="star" catalog="system"/>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJw-x0-I7l">
-                                <rect key="frame" x="348" y="72" width="31" height="31"/>
+                                <rect key="frame" x="357" y="73" width="31" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="🔍"/>
@@ -82,7 +77,6 @@
                     <connections>
                         <outlet property="searchButton" destination="lJw-x0-I7l" id="Efz-aL-9w0"/>
                         <outlet property="searchTextField" destination="5vx-PG-gAT" id="3IE-3J-FLM"/>
-                        <outlet property="starButton" destination="wnc-JI-Bju" id="Owy-6p-138"/>
                         <outlet property="tableView" destination="wnc-JI-Bju" id="wDZ-Lv-dtm"/>
                     </connections>
                 </viewController>
@@ -107,7 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
