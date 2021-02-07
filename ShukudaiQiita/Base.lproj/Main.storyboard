@@ -56,6 +56,11 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aT-Wg-YPq">
+                                                    <rect key="frame" x="364" y="115" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="star" catalog="system"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -77,6 +82,7 @@
                     <connections>
                         <outlet property="searchButton" destination="lJw-x0-I7l" id="Efz-aL-9w0"/>
                         <outlet property="searchTextField" destination="5vx-PG-gAT" id="3IE-3J-FLM"/>
+                        <outlet property="starButton" destination="wnc-JI-Bju" id="Owy-6p-138"/>
                         <outlet property="tableView" destination="wnc-JI-Bju" id="wDZ-Lv-dtm"/>
                     </connections>
                 </viewController>
@@ -101,6 +107,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

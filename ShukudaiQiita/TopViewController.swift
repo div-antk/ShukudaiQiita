@@ -16,7 +16,9 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
-    let disposeBag = DisposeBag()
+    @IBOutlet weak var starButton: UITableView!
+    
+    private let disposeBag = DisposeBag()
 
     let count = 0;
     
@@ -29,12 +31,21 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         
-        searchButton.rx.tap.subscribe({ [weak self] _ in
-            getArticles(keyword: searchTextField.text!)
-            print("⊂( ・∇・)⊃")
-        }).dispose(by: disposeBag)
-        
         getArticles(keyword: "")
+    }
+    
+    func buttonTapped() {
+        starButton.rx.tap
+            .subscribe(onNext: { (next) in
+                if self.like {
+                    self.starButton.image = UIImage(systemName: "star.fill")
+                } else {
+                    self.starButton.image = UIImage(systemName: "star")
+                }
+                print("next")
+            }, onError: { (error) in
+                print("error:\(error)")
+            }).disposed(by: disposeBag)
     }
     
     // セルの数
