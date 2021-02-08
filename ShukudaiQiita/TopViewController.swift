@@ -14,8 +14,9 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
-        
+    
+    @IBOutlet weak var search: UIButton!
+    
     private let disposeBag = DisposeBag()
     
     let count = 0;
@@ -30,18 +31,16 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.dataSource = self
         
         getArticles(keyword: "")
-        tap()
+        searchButtonTap()
     }
     
-    func tap() {
-        searchButton.rx.tap
+    // 虫めがねボタン押したとき
+    func searchButtonTap() {
+        search.rx.tap
             .subscribe(onNext: {(next) in
-//                self.count += 1
-//                self.countLabel.text = String(self.count)
-                        print("あああああ")
-//                        self.set()
-                    })
-                .disposed(by: disposeBag)
+                self.getArticles(keyword: self.searchTextField.text!)
+            })
+            .disposed(by: disposeBag)
     }
     
     // セルの数
@@ -84,13 +83,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-    
-    // 虫めがねボタン押したとき
-//        @IBAction func searchAction(_ sender: Any) {
-//
-//            getArticles(keyword: searchTextField.text!)
-//        }
-    
+        
     func getArticles(keyword:String) {
         
         // 受け取った検索キーワードが日本語の場合はエラーになるのでパーセントエンコーディングする
