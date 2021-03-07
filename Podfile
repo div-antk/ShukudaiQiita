@@ -7,6 +7,10 @@ target 'ShukudaiQiita' do
 
   # Pods for ShukudaiQiita
   pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'Moya/RxSwift', '~> 13.0'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+  pod 'RxDataSources', '~> 3.1.0'
+  pod 'Instantiate'
+  pod 'InstantiateStandard'
 end

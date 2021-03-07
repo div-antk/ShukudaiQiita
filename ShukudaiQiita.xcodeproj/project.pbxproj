@@ -16,6 +16,7 @@
 		3B1C611325AF2C58008BAF90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1C611125AF2C58008BAF90 /* LaunchScreen.storyboard */; };
 		3B2D905C25B1C3B00082CF0E /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */; };
 		3B4BCD2C25B5C14200794D60 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4BCD2B25B5C14100794D60 /* WebViewController.swift */; };
+		3BCBC42325F586C9006D07A7 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		3B1C611425AF2C58008BAF90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		3B4BCD2B25B5C14100794D60 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		771FDBACC27BBEB38CD78E78 /* Pods-ShukudaiQiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukudaiQiita.debug.xcconfig"; path = "Target Support Files/Pods-ShukudaiQiita/Pods-ShukudaiQiita.debug.xcconfig"; sourceTree = "<group>"; };
 		827F42949FC42BEA9A2DB500 /* Pods_ShukudaiQiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShukudaiQiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36406D66A24B86CB90D526F /* Pods-ShukudaiQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukudaiQiita.release.xcconfig"; path = "Target Support Files/Pods-ShukudaiQiita/Pods-ShukudaiQiita.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				3B1C610825AF2C55008BAF90 /* SceneDelegate.swift */,
 				3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */,
 				3B1C610A25AF2C55008BAF90 /* TopViewController.swift */,
+				3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */,
 				3B4BCD2B25B5C14100794D60 /* WebViewController.swift */,
 				3B1C610C25AF2C55008BAF90 /* Main.storyboard */,
 				3B1C610F25AF2C58008BAF90 /* Assets.xcassets */,
@@ -214,6 +217,7 @@
 				3B1C610B25AF2C55008BAF90 /* TopViewController.swift in Sources */,
 				3B1C610725AF2C55008BAF90 /* AppDelegate.swift in Sources */,
 				3B2D905C25B1C3B00082CF0E /* ArticleModel.swift in Sources */,
+				3BCBC42325F586C9006D07A7 /* ArticleViewModel.swift in Sources */,
 				3B4BCD2C25B5C14200794D60 /* WebViewController.swift in Sources */,
 				3B1C610925AF2C55008BAF90 /* SceneDelegate.swift in Sources */,
 			);

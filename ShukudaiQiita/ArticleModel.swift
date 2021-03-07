@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct ArticleModel: Codable {
   let title: String
