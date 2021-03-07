@@ -17,6 +17,7 @@
 		3B2D905C25B1C3B00082CF0E /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */; };
 		3B4BCD2C25B5C14200794D60 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4BCD2B25B5C14100794D60 /* WebViewController.swift */; };
 		3BCBC42325F586C9006D07A7 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */; };
+		3BCBC43525F5939E006D07A7 /* Qiita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBC43425F5939E006D07A7 /* Qiita.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		3B4BCD2B25B5C14100794D60 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		3BCBC43425F5939E006D07A7 /* Qiita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qiita.swift; sourceTree = "<group>"; };
 		771FDBACC27BBEB38CD78E78 /* Pods-ShukudaiQiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukudaiQiita.debug.xcconfig"; path = "Target Support Files/Pods-ShukudaiQiita/Pods-ShukudaiQiita.debug.xcconfig"; sourceTree = "<group>"; };
 		827F42949FC42BEA9A2DB500 /* Pods_ShukudaiQiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShukudaiQiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36406D66A24B86CB90D526F /* Pods-ShukudaiQiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukudaiQiita.release.xcconfig"; path = "Target Support Files/Pods-ShukudaiQiita/Pods-ShukudaiQiita.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3B1C610625AF2C55008BAF90 /* AppDelegate.swift */,
 				3B1C610825AF2C55008BAF90 /* SceneDelegate.swift */,
 				3B2D905B25B1C3B00082CF0E /* ArticleModel.swift */,
+				3BCBC43725F593A3006D07A7 /* Entity */,
 				3B1C610A25AF2C55008BAF90 /* TopViewController.swift */,
 				3BCBC42225F586C9006D07A7 /* ArticleViewModel.swift */,
 				3B4BCD2B25B5C14100794D60 /* WebViewController.swift */,
@@ -81,6 +84,14 @@
 				3B1C611425AF2C58008BAF90 /* Info.plist */,
 			);
 			path = ShukudaiQiita;
+			sourceTree = "<group>";
+		};
+		3BCBC43725F593A3006D07A7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3BCBC43425F5939E006D07A7 /* Qiita.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		AFF9D8A82692F7F33E17A7C9 /* Frameworks */ = {
@@ -219,6 +230,7 @@
 				3B2D905C25B1C3B00082CF0E /* ArticleModel.swift in Sources */,
 				3BCBC42325F586C9006D07A7 /* ArticleViewModel.swift in Sources */,
 				3B4BCD2C25B5C14200794D60 /* WebViewController.swift in Sources */,
+				3BCBC43525F5939E006D07A7 /* Qiita.swift in Sources */,
 				3B1C610925AF2C55008BAF90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

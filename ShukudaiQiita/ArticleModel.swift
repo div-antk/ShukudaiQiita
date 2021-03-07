@@ -8,8 +8,16 @@
 import Foundation
 import RxDataSources
 
-struct ArticleModel: Codable {
-  let title: String
-  let created_at: String
-  let url: String
+struct QiitaData {
+    var items: [Qitta]
+}
+
+extension QiitaData: SectionModelType {
+    
+    typealias Item = Qiita
+    
+    init(original: QiitaData, items: [Qiita]) {
+        self = original
+        self.items = items
+    }
 }
