@@ -8,7 +8,7 @@
 import Moya
 import RxSwift
 
-typealias QiitaAPIRepository = (( _ response: Qiita?, _ error: Swift.Error?) -> Void)
+typealias QiitaAPIResponse = (( _ response: Qiita?, _ error: Swift.Error?) -> Void)
 
 final class QiitaRepository {
     

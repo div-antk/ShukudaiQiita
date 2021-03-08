@@ -28,6 +28,23 @@ class ArticleViewModel: ArticleViewModelOutputs {
     
     let articles: Observable<[QiitaData]>
     let error: Observable<Error>
- 
+    
     private let disposeBag = DisposeBag()
+    
+    init() {
+        
+        let _articles = PublishRelay<[QiitaData]>()
+        let _error = PublishRelay<Error>()
+        
+        QiitaRepository.fetchQiita()
+            .subscribe(onNext: { response in
+                let dataSource = QiitaData.init(items: response)
+                _articles.accept([dataSource])
+            }, onError: { error in
+                _error.accept(error)
+            }).disposed(by: disposeBag)
+        
+        self.articles = _articles.asObservable()
+        self.error = _error.asObservable()
+    }
 }
